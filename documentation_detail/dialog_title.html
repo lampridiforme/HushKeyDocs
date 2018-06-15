@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <title>Email Verification Component</title>
+    <title>Dialog Title Component</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,11 +64,10 @@
 
                                 <div class="section-block">
                                     <ul>
-                                      <li>Description: Page displaying a popup telling the user to validate their email after they sign up.</li>
+                                      <li>Description: Appears to be a generic dialogue box template. </li>
                                       <li>Note:
                                         <ul>
-                                          <li>Bug: the back button reloads the page and doesn't take the user back to the sign up page. Double check the props page to see if it changes anything. Visiting any other page redirects the user to this page, trapping them at this step. Chrome only, redirect does not occur on Safari. </li>
-                                          <li>It would probably be better to have an on-page popup on the signup page rather than a redirect.</li>
+                                          <li>Located under the profile container subdirectory, but is not used by ProfileComponent. Likely replaced by the dialogue box internal to ProfileHeader.  </li>
                                         </ul>
                                       </li>
                                       <li>Dependencies:
@@ -79,19 +78,19 @@
                                           </li>
                                           <li>MaterialUI:
                                             <ul>
-                                              <li>Grid
+                                              <li>Svg___
                                                 <ul>
-                                                  <li>Layout System</li>
+                                                  <li>UI icons (close icon for closing the box)</li>
                                                 </ul>
                                               </li>
-                                              <li>Paper
+                                              <li>Button
                                                 <ul>
-                                                  <li>Layout System</li>
+                                                  <li>Navigation and submission</li>
                                                 </ul>
                                               </li>
-                                              <li>Buttons
+                                              <li>Divider
                                                 <ul>
-                                                  <li>Navigation Buttons</li>
+                                                  <li>Located at the bottom of the dialog to split it from other components</li>
                                                 </ul>
                                               </li>
                                           </li>
@@ -115,33 +114,26 @@
 								<div class="section-block">
 									<h1>Render</h1>
                   <p><span style="font-weight: 400;">&lt;Grid container spacing={24}&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid item xs={12} className={classes.contain}&gt;</span></p>
-<p>&nbsp;</p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 className='g__app-name'&gt;{config.settings.appName}&lt;/h1&gt;</span></p>
-<p>&nbsp;</p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div className='animate-bottom'&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Paper className={classes.paper} elevation={1} &gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style={{ padding: '48px 40px 36px' }}&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style={{</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paddingLeft: '40px',</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paddingRight: '40px'</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}}&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 className='zoomOutLCorner animated g__paper-title'&gt;{translate!('emailVerification.title')}&lt;/h2&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style={this.styles.message as any}&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{translate!('emailVerification.description')}</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style={this.styles.buttons}&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button variant='raised' style={this.styles.homeButton} color='primary' onClick={() =&gt; this.props.homePage()}&gt; {translate!('emailVerification.homeButton')} &lt;/Button&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button variant='raised' color='primary' onClick={() =&gt; this.props.sendEmailVerification()}&gt; {translate!('emailVerification.sendButton')} &lt;/Button&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Paper&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid&gt;</span></p>
-<p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid&gt;</span></p>
+                  <p><span style="font-weight: 400;">const { buttonLabel, disabledButton, onClickButton, onRequestClose, title } = this.props</span></p>
+                  <p>&nbsp;</p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;return (</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div className='g__dialog-title'&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style={this.styles.contain as any}&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style={{ paddingRight: '10px' }}&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SvgClose onClick={onRequestClose} style={{ cursor: 'pointer' }} /&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style={this.styles.title}&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{title || ''}</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ buttonLabel ? (&lt;div style={{ marginTop: '-9px' }}&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button color='primary' disabled={disabledButton ? disabledButton : false} onClick={onClickButton || (x =&gt; x)}&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{buttonLabel || ''}</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Button&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;) : ''}</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Divider /&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
+                  <p><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;)</span></p>
 								</div>
 							</section>
 
@@ -164,7 +156,7 @@
     <footer id="footer" class="footer text-center">
         <div class="container">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" target="_blank">Mario Matel</a> for developers</small>
+            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" target="_blank">Oscar Song</a> for developers</small>
 
         </div><!--//container-->
     </footer><!--//footer-->
