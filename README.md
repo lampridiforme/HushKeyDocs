@@ -1,3 +1,5 @@
+Link for hushKey documentation: https://lampridiforme.github.io/HushKeyDocs
+
 <a href="http://themes.3rdwavemedia.com/website-templates/prettydocs-free-bootstrap-theme-developers-and-startups/" target="_blank"><img src="http://themes.3rdwavemedia.com/wp-content/uploads/2015/12/Free-Bootstrap-Theme-for-Project-Documentation-PrettyDocs.png" alt="Free Bootstrap Theme for Developers and Startups" /></a>
 
 ##Theme Details & Demo
